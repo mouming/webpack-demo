@@ -31,5 +31,11 @@ module.exports = {
     }),
 
     new CopyWebpackPlugin([{ from: path.resolve(__dirname, "./public") }])
-  ]
+  ],
+
+  // 针对 webpack-dev-server 的配置
+  devServer: {
+    port: 9090,
+    contentBase: path.resolve(__dirname, "./dist")
+  }
 };
