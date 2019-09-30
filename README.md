@@ -26,3 +26,4 @@
 9. copy-webpack-plugin
 10. vue
 11. vue-loader
+12. vue-template-compiler

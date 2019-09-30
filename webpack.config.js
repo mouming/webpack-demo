@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
 module.exports = {
   // 入口
@@ -30,7 +31,9 @@ module.exports = {
       template: path.resolve(__dirname, "./public/index.html")
     }),
 
-    new CopyWebpackPlugin([{ from: path.resolve(__dirname, "./public") }])
+    new CopyWebpackPlugin([{ from: path.resolve(__dirname, "./public") }]),
+
+    new VueLoaderPlugin()
   ],
 
   // 针对 webpack-dev-server 的配置
