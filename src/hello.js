@@ -2,6 +2,8 @@
 import $ from "jquery";
 import utils from "./utils/index";
 import "./styles/hello.css";
+import "./styles/world.sass";
+import "./styles/dashazi.less";
 
 console.log(utils); // {getQuery: function() {}}
 

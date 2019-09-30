@@ -26,6 +26,16 @@ module.exports = {
         // 指定使用的转换器
         // css -> css-loader -> style-loader
         use: ["style-loader", "css-loader"]
+      },
+      {
+        test: /\.(scss|sass)$/,
+        // scss -> sass-loader -> css-loader -> style-loader
+        use: ["style-loader", "css-loader", "sass-loader"]
+      },
+      {
+        test: /\.less$/,
+        // less -> less-loader -> css-loader -> style-loader
+        use: ["style-loader", "css-loader", "less-loader"]
       }
     ]
   }
