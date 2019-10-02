@@ -5,7 +5,13 @@ const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
 module.exports = {
   // 入口
-  entry: "./src/pages/film/index.js",
+  // entry: "./src/pages/film/index.js",
+
+  // 多入口
+  entry: {
+    film: "./src/pages/film/index.js",
+    cinema: "./src/pages/cinema/index.js"
+  },
 
   // 出口
   output: {
@@ -27,8 +33,18 @@ module.exports = {
 
   // 插件
   plugins: [
+    // 首页
     new HtmlWebpackPlugin({
+      filename: "index.html",
+      chunks: ["film"],
       template: path.resolve(__dirname, "./public/index.html")
+    }),
+
+    // 影院列表页
+    new HtmlWebpackPlugin({
+      filename: "cinema.html",
+      chunks: ["cinema"],
+      template: path.resolve(__dirname, "./public/cinema.html")
     }),
 
     new CopyWebpackPlugin([{ from: path.resolve(__dirname, "./public") }]),
