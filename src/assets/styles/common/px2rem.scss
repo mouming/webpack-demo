@@ -1,0 +1,6 @@
+// 提供的是一个 scss 方法
+@function px2rem($px) {
+  @return $px * 320 / $designWidth/20 + rem;
+}
+
+$designWidth: 375;

@@ -5,7 +5,7 @@ const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
 module.exports = {
   // 入口
-  entry: "./src/index.js",
+  entry: "./src/pages/film/index.js",
 
   // 出口
   output: {
